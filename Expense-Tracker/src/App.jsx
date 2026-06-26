@@ -4,7 +4,11 @@ import Container from "./components/container";
 function App() {
   return (
     <>
-      <Container></Container>
+      <center>
+        <Container>
+          <h3>good morning</h3>
+        </Container>
+      </center>
     </>
   );
 }
