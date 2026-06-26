@@ -1,12 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import Container from "./components/container";
+import Heading from "./components/heading";
+import InputExpense from "./components/inputExpense";
 function App() {
   return (
     <>
       <center>
         <Container>
-          <h3>good morning</h3>
+          <Heading></Heading>
+          <InputExpense></InputExpense>
         </Container>
       </center>
     </>
