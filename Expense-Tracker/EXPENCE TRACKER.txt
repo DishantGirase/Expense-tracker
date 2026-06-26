@@ -1,0 +1,48 @@
+EXPENCE TRACKER 
+*Components Stucture*
+1)app component{}
+2)container component{ we will pass all components as his childrens}
+3)input container {
+a) two input areas expense name  and expense amount
+b)both will be usestate arrays
+}
+4)add expense component{
+a)this will take expanse name and amount as props
+b)and also get handle expense as props method 
+c)and will pass updated arrays to child as props
+d)create and pass the variable total spent
+e)every time the component re render it will add the amount to total spent and pass to total spent component
+}
+5)display component{
+a)this will get all data from parent and render it 
+b)it will re render after add expense 
+}
+6)total spent component{
+a)this component will get value from add expenses component 
+}
+
+App
+  ├─ State:
+  │   ├─ expenses: [{id, name, amount}, ...]
+  │   ├─ formData: {name, amount}
+  │
+  ├─ Handlers:
+  │   ├─ handleAddExpense() → updates expenses array
+  │   ├─ handleDeleteExpense(id) → filters array
+  │   ├─ handleInputChange(e) → updates formData
+  │
+  └─ Renders:
+      ├─ Container (wrapper, no logic)
+      │   ├─ InputForm
+      │   │   (receives: formData, onChange)
+      │   │   (calls: onAddExpense)
+      │   │
+      │   ├─ ExpenseList
+      │   │   (receives: expenses array, onDelete)
+      │   │   └─ ExpenseItem (maps over expenses)
+      │   │       (receives: expense object, id, onDelete)
+      │   │       (calls: onDelete(id))
+      │   │
+      │   └─ TotalDisplay
+      │       (receives: expenses array)
+      │       (calculates: sum of all amounts)
