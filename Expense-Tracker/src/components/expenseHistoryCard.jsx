@@ -11,7 +11,9 @@ const ExpenseHistoryCard = () => {
         </div>
         <div className={styles.expenseRight}>
           <div className={styles.expenseAmount}>₹850</div>
-          <div className={styles.btnDelete}>{deleteIcon}</div>
+          <div className={styles.btnDelete}>
+            <img src={deleteIcon} alt="delete" />
+          </div>
         </div>
       </div>
     </>

@@ -6,7 +6,7 @@
   display: block;
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #111827;
   margin-bottom: 8px;
 }
 
@@ -14,11 +14,25 @@
   width: 100%;
   padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
   box-sizing: border-box;
-  color: var(--text-primary);
+  color: #111827;
   outline: none;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.formInput:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #fafafa;
+}
+
+.formInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
 }
 
 .formInput::placeholder {
