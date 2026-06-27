@@ -1,12 +1,10 @@
 .heading {
+  width: 100%;
   font-size: 13px;
   font-weight: 700;
   color: var(--text-primary);
   margin-top: 0;
   margin-bottom: 20px;
-  /* margin-right: 35%; */
+  display: block;
   float: left;
-}
-.headingContainer {
-  border: 1px solid black;
 }
