@@ -46,3 +46,6 @@ App
       │   └─ TotalDisplay
       │       (receives: expenses array)
       │       (calculates: sum of all amounts)
+
+
+      deployment link-https://expense-tracker-eight-beta-31.vercel.app/
