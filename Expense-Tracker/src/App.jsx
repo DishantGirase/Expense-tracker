@@ -13,7 +13,7 @@ function App() {
         <Heading></Heading>
         <InputExpense></InputExpense>
         <AddExpense></AddExpense>
-        <hr className="separator" />
+        <div className="separator"></div>
         <ExpenseHistoryContainer></ExpenseHistoryContainer>
       </Container>
     </>

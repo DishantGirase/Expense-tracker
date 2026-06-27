@@ -1,0 +1,52 @@
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f2;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.expenseInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.expenseName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.expenseDate {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Right side content (Amount + Delete) */
+.expenseRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.expenseAmount {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Square Trash/Action Button */
+.btnDelete {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #dc2626; /* Soft red tint */
+}
