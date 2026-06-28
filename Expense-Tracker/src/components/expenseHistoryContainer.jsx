@@ -1,12 +1,19 @@
-import styles from "./ExpenseHistoryContainer.module.css";
 import ExpenseHistoryCard from "./expenseHistoryCard";
-const ExpenseHistoryContainer = () => {
+import styles from "./ExpenseHistoryContainer.module.css";
+const ExpenseHistoryContainer = ({ expenses }) => {
   return (
     <>
       {" "}
       <div className={styles.container}>
         <h5 className={styles.sectionTitle}>Recent expenses</h5>
-        <ExpenseHistoryCard></ExpenseHistoryCard>
+        {expenses.map((expense) => (
+          <ExpenseHistoryCard
+            id={expense.id}
+            key={expense.id}
+            name={expense.name}
+            amount={expense.amount}
+          />
+        ))}
       </div>
     </>
   );

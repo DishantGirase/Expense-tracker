@@ -1,5 +1,9 @@
 import styles from "./inputExpense.module.css";
-const InputExpense = () => {
+const InputExpense = ({
+  handleOnChangeName,
+  handleOnClickAddBtn,
+  handleOnChangeAmount,
+}) => {
   return (
     <>
       <div className={styles.formGroup}>
@@ -20,13 +24,22 @@ const InputExpense = () => {
         </label>
         <input
           className={styles.formInput}
-          type="text"
+          type="number"
           id="amount"
           placeholder="0.00"
+          onChange={(event) => {
+            handleOnChangeAmount(event);
+          }}
         />
       </div>
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">
+        <button
+          class="btn btn-primary"
+          type="button"
+          onClick={(event) => {
+            handleOnClickAddBtn(event);
+          }}
+        >
           + Add expense
         </button>
       </div>

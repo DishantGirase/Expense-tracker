@@ -7,25 +7,49 @@ import ExpenseHistoryContainer from "./components/expenseHistoryContainer";
 import TotalSpent from "./components/totalSpent";
 
 function App() {
-  handleOnChangeName = (event) => {
-    name = event.target.value;
+  const [expenses, setExpenses] = useState([]);
+
+  const [inputName, setInputName] = useState("");
+  const [inputAmount, setInputAmount] = useState("");
+
+  const handleOnChangeName = (event) => {
+    setInputName(event.target.value);
   };
-  handleOnChangeAmount = (event) => {
-    amount = event.target.value;
+
+  const handleOnChangeAmount = (event) => {
+    setInputAmount(event.target.value);
+  };
+
+  const handleOnClickAddBtn = (event) => {
+    if (!inputName.trim() || !inputAmount) return;
+
+    const newExpense = {
+      id: Date.now(),
+      key: Date.now(),
+      name: inputName,
+      amount: inputAmount,
+    };
+
+    setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
+    setInputName("");
+    setInputAmount("");
   };
   return (
     <>
       {" "}
       <Container>
         <Heading></Heading>
-        <InputExpense handleOnChangeName={handleOnChangeName}></InputExpense>
+        <InputExpense
+          handleOnChangeName={handleOnChangeName}
+          handleOnChangeAmount={handleOnChangeAmount}
+          handleOnClickAddBtn={handleOnClickAddBtn}
+        ></InputExpense>
         {/* <AddExpense></AddExpense> */}
         <div className="separator"></div>
-        <ExpenseHistoryContainer></ExpenseHistoryContainer>
+        <ExpenseHistoryContainer expenses={expenses}></ExpenseHistoryContainer>
         <TotalSpent></TotalSpent>
       </Container>
     </>
   );
 }
-
 export default App;
