@@ -7,7 +7,7 @@ const ExpenseHistoryCard = ({ name, id, amount, handleOnDelete }) => {
       <div className={styles.cardContainer}>
         <div className={styles.expenseInfoContainer}>
           <div className={styles.expenseName}>{name}</div>
-          <div className={styles.expenseDate}>Yesterday</div>
+          <div className={styles.expenseDate}>just now</div>
         </div>
         <div className={styles.expenseRight}>
           <div className={styles.expenseAmount}>{amount}</div>

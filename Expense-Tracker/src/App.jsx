@@ -27,7 +27,7 @@ function App() {
       id: Date.now(),
       key: Date.now(),
       name: inputName,
-      amount: inputAmount,
+      amount: parseFloat(inputAmount),
     };
 
     setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
@@ -57,7 +57,7 @@ function App() {
           expenses={expenses}
           handleOnDelete={handleOnDelete}
         ></ExpenseHistoryContainer>
-        <TotalSpent></TotalSpent>
+        <TotalSpent expenses={expenses}></TotalSpent>
       </Container>
     </>
   );
