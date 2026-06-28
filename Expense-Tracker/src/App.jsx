@@ -34,8 +34,10 @@ function App() {
     setInputName("");
     setInputAmount("");
   };
-  const handleOnDelete = (event) => {
-    console.log(event);
+  const handleOnDelete = (id) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.filter((expense) => expense.id !== id),
+    );
   };
   return (
     <>

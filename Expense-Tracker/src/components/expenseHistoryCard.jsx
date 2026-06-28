@@ -1,6 +1,6 @@
 import deleteIcon from "../assets/delete-icon.png";
 import styles from "./expenseHistoryCard.module.css";
-const ExpenseHistoryCard = ({ name, id, amount }) => {
+const ExpenseHistoryCard = ({ name, id, amount, handleOnDelete }) => {
   return (
     <>
       {" "}
@@ -15,8 +15,8 @@ const ExpenseHistoryCard = ({ name, id, amount }) => {
             <img
               src={deleteIcon}
               alt="delete"
-              onClick={(event) => {
-                handleOnDelete(event);
+              onClick={() => {
+                handleOnDelete(id);
               }}
             />
           </div>
