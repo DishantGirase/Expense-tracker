@@ -5,7 +5,7 @@ const TotalSpent = ({ expenses }) => {
   return (
     <div className={styles.totalBox}>
       <div className={styles.totalLabel}>Total spent</div>
-      <div className={styles.totalAmount}>{total}</div>
+      <div className={styles.totalAmount}>{`₹ ${total}`}</div>
     </div>
   );
 };
