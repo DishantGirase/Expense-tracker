@@ -1,6 +1,6 @@
 import ExpenseHistoryCard from "./expenseHistoryCard";
 import styles from "./ExpenseHistoryContainer.module.css";
-const ExpenseHistoryContainer = ({ expenses }) => {
+const ExpenseHistoryContainer = ({ expenses, handleOnDelete }) => {
   return (
     <>
       {" "}
@@ -12,6 +12,7 @@ const ExpenseHistoryContainer = ({ expenses }) => {
             key={expense.id}
             name={expense.name}
             amount={expense.amount}
+            handleOnDelete={handleOnDelete}
           />
         ))}
       </div>

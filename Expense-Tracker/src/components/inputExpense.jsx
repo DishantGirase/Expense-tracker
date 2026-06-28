@@ -1,5 +1,7 @@
 import styles from "./inputExpense.module.css";
 const InputExpense = ({
+  inputName,
+  inputAmount,
   handleOnChangeName,
   handleOnClickAddBtn,
   handleOnChangeAmount,
@@ -14,6 +16,7 @@ const InputExpense = ({
           className={styles.formInput}
           type="text"
           id="name"
+          value={inputName}
           placeholder="eg.,Coffee,Gas,Rent"
           onChange={(event) => {
             handleOnChangeName(event);
@@ -27,6 +30,7 @@ const InputExpense = ({
           type="number"
           id="amount"
           placeholder="0.00"
+          value={inputAmount}
           onChange={(event) => {
             handleOnChangeAmount(event);
           }}

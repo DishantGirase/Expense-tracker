@@ -34,19 +34,27 @@ function App() {
     setInputName("");
     setInputAmount("");
   };
+  const handleOnDelete = (event) => {
+    console.log(event);
+  };
   return (
     <>
       {" "}
       <Container>
         <Heading></Heading>
         <InputExpense
+          inputName={inputName}
+          inputAmount={inputAmount}
           handleOnChangeName={handleOnChangeName}
           handleOnChangeAmount={handleOnChangeAmount}
           handleOnClickAddBtn={handleOnClickAddBtn}
         ></InputExpense>
         {/* <AddExpense></AddExpense> */}
         <div className="separator"></div>
-        <ExpenseHistoryContainer expenses={expenses}></ExpenseHistoryContainer>
+        <ExpenseHistoryContainer
+          expenses={expenses}
+          handleOnDelete={handleOnDelete}
+        ></ExpenseHistoryContainer>
         <TotalSpent></TotalSpent>
       </Container>
     </>

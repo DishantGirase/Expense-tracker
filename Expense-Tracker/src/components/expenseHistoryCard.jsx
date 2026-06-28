@@ -12,7 +12,13 @@ const ExpenseHistoryCard = ({ name, id, amount }) => {
         <div className={styles.expenseRight}>
           <div className={styles.expenseAmount}>{amount}</div>
           <div className={styles.btnDelete}>
-            <img src={deleteIcon} alt="delete" />
+            <img
+              src={deleteIcon}
+              alt="delete"
+              onClick={(event) => {
+                handleOnDelete(event);
+              }}
+            />
           </div>
         </div>
       </div>
