@@ -19,6 +19,15 @@ function App() {
   const handleOnChangeAmount = (event) => {
     setInputAmount(event.target.value);
   };
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString("en-US", {
+      // year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
 
   const handleOnClickAddBtn = (event) => {
     if (!inputName.trim() || !inputAmount) return;
@@ -28,9 +37,10 @@ function App() {
       key: Date.now(),
       name: inputName,
       amount: parseFloat(inputAmount),
+      createdAt: new Date(),
     };
 
-    setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
+    setExpenses((prevExpenses) => [newExpense, ...prevExpenses]);
     setInputName("");
     setInputAmount("");
   };
@@ -54,6 +64,7 @@ function App() {
         {/* <AddExpense></AddExpense> */}
         <div className="separator"></div>
         <ExpenseHistoryContainer
+          formatDate={formatDate}
           expenses={expenses}
           handleOnDelete={handleOnDelete}
         ></ExpenseHistoryContainer>
